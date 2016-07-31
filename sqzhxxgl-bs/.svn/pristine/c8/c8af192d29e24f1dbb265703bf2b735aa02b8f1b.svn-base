@@ -1,0 +1,161 @@
+/* Author: QQ:31784849, http://www.magbox520.com/,旺旺：嘀哒嘀哒嘀*/
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,figure,iframe{margin:0;padding:0}
+body,button,input,select,textarea,dd,a{font:12px/1.5 Microsoft Sans,Myriad Pro,\5fae\8f6f\96c5\9ed1,\5b8b\4f53,Arial;color:#4d4d4d}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+small{font-size:12px}
+ul,ol{list-style:none}
+
+a:hover{text-decoration: none}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%; outline:none}
+table{border-collapse:collapse;border-spacing:0}
+
+a{text-decoration:none; border:0;outline:none; color:#333}
+a:focus {outline: none} 
+h1, h2, h3, h4, h5, h6,code{font-family:\5fae\8f6f\96c5\9ed1, \9ed1\4f53, \5b8b\4f53,Arial}
+ul, li{list-style: none}
+body{background-color:#fafafa; }
+input{outline:none}
+img{border:0}
+.fl{float:left}
+.fr{float:right}
+.top30{margin:10px auto}
+
+/*comonn*/
+.head,.headContent,.tearch,.foot{width:100%;clear:both; position:relative}
+.head dd a:hover,.form dd a:hover,.notice dd a:hover,.foot h4 a:hover{color:#c40000}
+.logo,.nav i,.form code,.add a,a.save{background:url(../images/homeIcon.png) no-repeat; display:inline-block}
+
+/*head*/
+.head{background-color:#202020; height:40px}
+.head ul,.headContent ul,.warp,.foot{margin:0 auto; width:1200px; clear:both; position:relative}
+.head h1{font-size:18px; color:#fff; line-height:40px}
+.head dd{float:left; color:#fff; font-size:14px; line-height:40px; margin:0 4px}
+.head dd a,.nav dd a{color:#fff}
+
+/*headContent*/
+.headContent{background-color:#c40000; height:110px}
+.logo{width:84px; height:79px; background-position:0 0; margin-top:15px}
+.logo a{width:84px; height:79px; display:inline-block}
+.nameList{margin:20px 0 0 10px; font-size:12px; color:#fff}
+.nameList dd{color:#fff;line-height:24px}
+.nav{margin-top:20px; font-size:16px}
+.nav dd a{display:inline-block;font-weight:bold; font-size:16px}
+.nav dd{float:left;margin-left:10px; vertical-align:middle; margin-left:40px}
+.nav i{margin-right:5px;vertical-align:middle}
+.nav i.baseIcon{width:46px; height:65px; background-position:-93px 0}
+.nav i.manageIcon{width:67px; height:50px; background-position:-146px 0}
+.nav i.manageIcon{width:67px; height:50px; background-position:-146px 0}
+.nav i.serveIcon{width:53px; height:61px; background-position:-219px 0}
+.nav i.partyIcon{width:59px; height:60px; background-position:-281px 0}
+.nav i.meetingIcon{width:61px; height:58px; background-position:-347px 0}
+.nav i.thome{background:url(/styles/images/home.png) #fff left repeat-y;}
+.warpContent{background:url(/styles/images/leftNavBg.png) #fff left repeat-y; height:auto; width:1200px}
+
+/*leftNav*/
+.leftNav{width:192px;height: auto; margin:10px auto; border:1px solid #e2e2e2}
+
+/*menu*/
+.menu{width:192px;height:auto}
+.guide li{float:left; height:40px;color:#666600;margin:5px auto; font-size:16px; padding-right:4px}
+.guide h2{font-size:18px;color:#333}
+
+.menu-title,.menu-i{background:url(/styles/images/menubg.png) no-repeat}
+.menu-title{height:21px;overflow:hidden;padding:6px 8px;background-position:0 0;background-repeat:repeat-x;color:#444;font-size:14px;font-weight:bold}
+.menu-p{display:block;overflow:hidden; height:40px;color:#444;font-size:14px;font-weight:normal;cursor:pointer;}
+.menu-p .menu-i{background:url(/styles/images/arrowIcon.png) no-repeat;display:inline-block;width:13px;height:13px;left:10px; top:14px; position:absolute}
+.menu-p a:link,.menu-p a:visited{color:#4d4d4d;line-height:40px; text-indent:40px;font-size:15px;font-weight:bold; display:block}
+.menu-p a:hover{background:url(/styles/images/menuLine.png) left no-repeat;color:#ff0606}
+.menu-p-current a:link,.menu-p-current a:visited{color:#000; display:block}
+.menu-p-current a:hover{color:#000}
+.menu-c{border-top:solid 1px #e6e6e6;display:none}
+.menu-c-current{display:block}
+.menu-p-current .menu-i{background-position:0 -17px}
+.menu-c ul{display:block;}
+.menu-c li{background-color:#fafafa;height:36px;margin:0;border:solid #e2e2e2; border-width:0 0px 1px 0px;text-indent:50px;overflow:hidden;padding:0}
+.menu-c li a{color:#000;text-decoration:none;line-height:36px; display:block; overflow:hidden}
+.menu-c a:hover{background:url(/styles/images/menuLine.png) left no-repeat;color:#72942a}
+.menu-c .current:link,menu .menu-c .current:visited{color:#000;font-weight:bold;}
+.menu-c .current:hover{color:#ff0606}
+.menu-p{border:solid #e2e2e2; border-width:0 0 1px 0px; height:40px;background-color:#eee; text-indent:10px; position:relative}
+.noBorder{border-bottom:none!important}
+
+.rightContent{width:1000px}
+
+/*news*/
+.news{width:1000px; height:300px}
+.form{width:530px; margin:10px 0 0 25px;_margin:10px 0 0 15px; height:300px}
+.notice{width:410px; margin:10px 0 0 20px;height:300px}
+.form ul,.notice ul,.summary ul{background:url(/styles/images/liBg.png) repeat-x; height:28px;width: 163px;}
+.form li,.notice li,.summary li{float:left;height:24px;line-height:28px;background-color:#fff;font-size:15px;width:150px;text-align:center;}
+.form span,.notice span,.summary span{background:url(/styles/images/sapnIcon.png) left no-repeat;height:28px; width:9px; display:inline-block}
+.form dl,.notice dl{border:1px solid #6d6d6d; background-color:#fff; padding-top:3px; z-index:2; position:relative}
+.form dl{width:528px;height:250px}
+.notice dl{width:408px;height:250px}
+.form dd,.notice dd{font-size:12px; padding:4px 0;position:relative}
+.form dd{height:27px; line-height:27px}
+.notice dd{height:22px; line-height:22px; margin-left:6px}
+.form dd a,.form li a,.notice dd a{color:#808080}
+.form .onForm,.notice .onForm,.summary .onForm{border:solid #6d6d6d; border-width:1px 1px 0 1px; height:28px;line-height:28px;background-color:#fff;z-index:20; position:relative}
+.form cite{font-size:12px; color:#808080; position:absolute; right:15px; top:0}
+.form code{width:13px; height:19px; display:inline-block; margin:0 5px; vertical-align: middle}
+.form code.redIcon{background-position:-418px 0}
+.form code.yeowlIcon{background-position:-436px 0}
+.form code.greenIcon{background-position:-454px 0}
+/*summary*/
+.summary{width:960px;margin:10px 0 0 25px;_margin:10px 0 10px 15px}
+.summaryContent,.dataForm{border:1px solid #6d6d6d; background-color:#fff;z-index:2; position:relative}
+.summaryData{width:380px; margin-left:20px; border-right:1px solid #6d6d6d; padding-top:4px}
+.summaryData dl{height:30px; margin-bottom:6px; line-height:30px}
+.summaryData dd{float:left; font-size:12px; color:#9f0909; width:160px; padding:2px 10px 2px 0; text-align:right; height:30px; line-height:30px}
+.summaryData code{color:#939393}
+.bgColor{background-color:#efefef}
+.summaryContent{height:220px}
+.summaryPic,.summaryPic{padding:10px 0 10px 10px}
+
+/*rightContent*/
+.rightContent h4{width:80px;color:#fff; text-align:center; background-color:#494949; height:30px; margin:10px 0 0 25px; line-height:30px; font-size:12px}
+
+.data,.place{width:960px; margin:10px 0 5px 25px;_margin:10px 0 5px 13px; padding-bottom:10px}
+.dataForm{width:958px; margin:10px 0 5px 25px;_margin:10px 0 5px 13px; padding-bottom:10px}
+.data table{width:960px;border:1px solid #757f5c}
+.data table th{color:#4d4d4d; font-size:14px}
+.data table td.red{color:#F00}
+.data table td,.data table th{height:30px; line-height:30px; font-size:13px; color:#6c6c6c;padding-left: 20px;width: 200px}
+
+.place{background-color:#484848; height:28px; line-height:28px; padding-bottom:0; width:960px; position:relative}
+.place li{font-size:14px; float:left; margin:0 4px;color:#fff}
+.place li a{color:#fff}
+.place h5{position:absolute; right:0; font-size:14px; background-color:#c40000; text-align:center; color:#fff; top:0; width:100px; height:28px; line-height:28px; display:inline-block}
+.place h5 a{ color:#fff; line-height:28px}
+.add{ height:33px; position:relative;width:960px; margin:10px 0 0 25px;_margin:10px 0 0 15px}
+.add a{width:97px; height:33px; display:inline-block; color:#fff; text-align:center; font-size:14px; line-height:33px; position:absolute}
+.add  a.addForm{background-position:0 -87px; right:120px}
+.add  a.tjBtn{background-position:-109px -87px; right:5px}
+
+.dataForm h3{ margin:5px 0; background-color:#f0f0f0; padding-left:20px; width:400px; color:#3a4c3e; height:24px; line-height:24px}
+.dataForm span{padding-left:20px}
+.dataForm code{padding-left:10px}
+.dataForm li{ margin:15px 0}
+.dataForm p{ margin-left:20px; border-radius:4px; height:30px; line-height:30px; padding:0 6px; background-color:#ffea94; width:390px}
+.input{background-color:#fff; border:1px solid #69c1e9; width:150px; height:24px}
+.dataBg{font-size:14px; background-color:#f1f1f1; line-height:24px; margin-left:10px; padding:4px}
+.dataInput{border:1px solid #b5b5b5; height:24px; font-size:14px}
+.dataForm dl{margin:10px 0 0 25px}
+.dataForm dd{margin-bottom:10px; vertical-align:middle; line-height:30px}
+.textarea{border:1px solid #b5b5b5; width:340px; height:100px}
+.dataSpan{width:60px; display:inline-block; vertical-align:top}
+a.save{width:97px; height:33px; line-height:33px; text-align:center; color:#fff; font-size:14px; background-position:-224px -87px}
+
+.formHide{display:none}
+.formShow{display:block}
+
+/*foot*/
+.foot{height:50px; border-top:1px solid #ced7ce; margin:10 auto; font-size:12px; line-height:40px}
+.foot h3,.foot h4{font-size:12px; color:#a9a9a9}
+.foot h4 a{line-height:40px;color:#a9a9a9}

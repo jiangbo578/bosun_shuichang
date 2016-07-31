@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wsaf.wicresoft.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://wsaf.wicresoft.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">统一平台应用管理服务</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wsaf.wicresoft.com/">
+      <s:element name="GetApplicationInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationInfoListByProductID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationInfoListByProductIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationInfoListByProductIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPublicConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPublicConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPublicConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationConfigByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationConfigByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationConfigByKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInfoListByApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceInfoListByApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceInfoListByApplicationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventDefinitionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventInfoListByApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="beginTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventInfoListByApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEventInfoListByApplicationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckApplicationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="createTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WriteLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchLogsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetApplicationInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationInfoListByProductIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationInfoListByProductID" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationInfoListByProductIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationInfoListByProductIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPublicConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPublicConfig" />
+  </wsdl:message>
+  <wsdl:message name="GetPublicConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPublicConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationConfigByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationConfigByKey" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationConfigByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationConfigByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationConfig" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoListByApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceInfoListByApplication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoListByApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceInfoListByApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEventSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEvent" />
+  </wsdl:message>
+  <wsdl:message name="SendEventSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventInfoListByApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEventInfoListByApplication" />
+  </wsdl:message>
+  <wsdl:message name="GetEventInfoListByApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventInfoListByApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckApplication" />
+  </wsdl:message>
+  <wsdl:message name="CheckApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogs" />
+  </wsdl:message>
+  <wsdl:message name="GetLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchLogs" />
+  </wsdl:message>
+  <wsdl:message name="SearchLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchLogsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ApplicationsServiceSoap">
+    <wsdl:operation name="GetApplicationInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取应用具体信息</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationInfoSoapIn" />
+      <wsdl:output message="tns:GetApplicationInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInfoListByProductID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某一产品在系统中注册的所有实例</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationInfoListByProductIDSoapIn" />
+      <wsdl:output message="tns:GetApplicationInfoListByProductIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublicConfig">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取公共配置项</wsdl:documentation>
+      <wsdl:input message="tns:GetPublicConfigSoapIn" />
+      <wsdl:output message="tns:GetPublicConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfigByKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取应用配置项（如果没有特别配置，会再去公共配置项中查找）</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationConfigByKeySoapIn" />
+      <wsdl:output message="tns:GetApplicationConfigByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfig">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取应用配置项（包括所有公共配置项，除非被应用自己的配置项覆盖）</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationConfigSoapIn" />
+      <wsdl:output message="tns:GetApplicationConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务详细信息</wsdl:documentation>
+      <wsdl:input message="tns:GetServiceInfoSoapIn" />
+      <wsdl:output message="tns:GetServiceInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfoListByApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某个应用所有服务的列表</wsdl:documentation>
+      <wsdl:input message="tns:GetServiceInfoListByApplicationSoapIn" />
+      <wsdl:output message="tns:GetServiceInfoListByApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEvent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送一个预先注册的事件</wsdl:documentation>
+      <wsdl:input message="tns:SendEventSoapIn" />
+      <wsdl:output message="tns:SendEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventInfoListByApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取一段时间内应用接收到的事件</wsdl:documentation>
+      <wsdl:input message="tns:GetEventInfoListByApplicationSoapIn" />
+      <wsdl:output message="tns:GetEventInfoListByApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">验证应用合法性</wsdl:documentation>
+      <wsdl:input message="tns:CheckApplicationSoapIn" />
+      <wsdl:output message="tns:CheckApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">应用写入日志</wsdl:documentation>
+      <wsdl:input message="tns:WriteLogSoapIn" />
+      <wsdl:output message="tns:WriteLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">应用获取日志</wsdl:documentation>
+      <wsdl:input message="tns:GetLogsSoapIn" />
+      <wsdl:output message="tns:GetLogsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">应用搜索日志</wsdl:documentation>
+      <wsdl:input message="tns:SearchLogsSoapIn" />
+      <wsdl:output message="tns:SearchLogsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicationsServiceSoap" type="tns:ApplicationsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplicationInfo">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetApplicationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInfoListByProductID">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetApplicationInfoListByProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublicConfig">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetPublicConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfigByKey">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetApplicationConfigByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfig">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetApplicationConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfo">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetServiceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfoListByApplication">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetServiceInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEvent">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SendEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventInfoListByApplication">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetEventInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckApplication">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/CheckApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/WriteLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogs">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLogs">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ApplicationsServiceSoap12" type="tns:ApplicationsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplicationInfo">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetApplicationInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInfoListByProductID">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetApplicationInfoListByProductID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublicConfig">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetPublicConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfigByKey">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetApplicationConfigByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationConfig">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetApplicationConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfo">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetServiceInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfoListByApplication">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetServiceInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEvent">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SendEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventInfoListByApplication">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetEventInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckApplication">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/CheckApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/WriteLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogs">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetLogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLogs">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchLogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicationsService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">统一平台应用管理服务</wsdl:documentation>
+    <wsdl:port name="ApplicationsServiceSoap" binding="tns:ApplicationsServiceSoap">
+      <soap:address location="http://12.118.2.172/Framework.WebService/ApplicationsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ApplicationsServiceSoap12" binding="tns:ApplicationsServiceSoap12">
+      <soap12:address location="http://12.118.2.172/Framework.WebService/ApplicationsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

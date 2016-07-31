@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity class="Wicresoft.Framework.Organization.User">
+	<properties>
+		<property name="ID" type="System.Guid">7a9458ca-19f9-40c1-89c8-013791aea745
+		</property>
+		<property name="Name" type="System.String">wygen</property>
+		<property name="DisplayName" type="System.String">王勇根</property>
+		<property name="State" type="System.Int32">0</property>
+		<property name="Gender" type="System.String">男</property>
+		<property name="NameSpell" type="System.String">Wang Yong Gen</property>
+		<property name="Photo" type="System.String" />
+		<property name="PositionLevel" type="System.String" />
+		<property name="MainDepartmentID" type="System.Guid">916ae1e2-c6c8-4879-9234-557bb895f2c4
+		</property>
+	</properties>
+	<extend>
+		<property name="Email" type="ValueString">wygen@shgzw.gov.cn</property>
+		<property name="LCS" type="ValueString" />
+		<property name="ADDRESS" type="ValueString" />
+		<property name="PLvl" type="ValueString" />
+		<property name="FingerRegiste" type="ValueInt" />
+	</extend>
+</entity>

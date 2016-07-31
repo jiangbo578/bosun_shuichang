@@ -1,0 +1,11 @@
+package com.gouhai.baoshan.dao.assess;
+
+import org.springframework.stereotype.Repository;
+
+import com.gouhai.baoshan.dao.BaseDao;
+import com.gouhai.baoshan.entity.assess.AssessRemind;
+
+@Repository
+public class AssessRemindDao extends BaseDao<AssessRemind, String> {
+
+}

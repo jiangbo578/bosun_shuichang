@@ -1,0 +1,25 @@
+<!--
+   - Alternative to resin.conf, minimal configuration for starting server.
+   -
+   - unix> bin/httpd.sh -server-root /var/www -conf conf/minimal.conf
+   - win>  httpd.exe    -server-root /var/www -conf conf/minimal.conf
+   -
+   - Server root is /var/www, documents are in /var/www/docs.
+  -->
+
+<resin xmlns="http://caucho.com/ns/resin"
+       xmlns:resin="http://caucho.com/ns/resin/core">
+
+  <log name="" level="info" path="stdout:"/>
+ <!--
+ <javac compiler="D:\Program Files (x86)\jdk1.6.0_27\bin\javac.exe" args=""/>
+ -->
+  <server>
+    <http server-id="" host="*" port="8090"/>
+
+    <resin:import path="./conf/app-default.xml"/>
+    <host id="" root-directory=".">
+     <web-app id="/cms" document-directory="E:\higou\sqzhxxgl-bs\web"/>
+    </host>
+  </server>
+</resin>

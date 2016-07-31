@@ -1,0 +1,410 @@
+body {
+	background-color: #fff;
+	font-family: Tahoma, Geneva, '\5fae\8f6f\96c5\9ed1', '\5B8B\4F53';
+}
+
+pre {
+	padding: 0;
+	background-color: inherit;
+	border: inherit;
+	font-family: Tahoma, Geneva, '\5fae\8f6f\96c5\9ed1', '\5B8B\4F53';
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+.w100 {
+	width: 100px;
+}
+
+.w110 {
+	width: 110px;
+}
+
+.w120 {
+	width: 120px;
+}
+
+.w150 {
+	width: 150px;
+}
+
+.w200 {
+	width: 200px;
+}
+
+.db {
+	display: block;
+}
+
+.dn {
+	display: none;
+}
+
+.form-signin {
+	max-width: 430px;
+	padding: 40px 50px;
+	margin: 85px auto;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	z-index: 1000;
+}
+
+.form-signin h2 {
+	font-weight: bold;
+}
+
+.form-signin .form-signin-heading {
+	text-align: center;
+}
+
+.form-signin .form-control {
+	position: relative;
+	font-size: 18px;
+	height: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[name="username"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-signin input[name="password"] {
+	margin-bottom: 10px;
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-signin input[name="checkCode"] {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-signin a {
+	display: inline-block;
+	margin-top: 7px;
+	border: 1px solid #2a6496;
+}
+
+.form-signin .text-danger {
+	font-size: 16px;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+.form-signin .btip {
+	color: #333;
+}
+
+/**
+扫描管理
+*/
+.navbar {
+	margin-bottom: 15px;
+}
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus
+	{
+	color: #fff;
+	background-color: #285e8e;
+}
+
+.navbar-default .navbar-brand {
+	font-size: 16px;
+	padding-right: 0
+}
+
+.navbar-nav>li>a {
+	font-size: 16px;
+}
+
+.navbar-right p {
+	color: #777;
+	font-size: 16px;
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+
+.navbar-right a {
+	color: #285e8e;
+	font-weight: bold;
+}
+
+.highlight {
+	padding: 9px 14px;
+	margin-bottom: 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+}
+
+.pagination>li:first-child>span {
+	border: 0;
+}
+
+.pagination>li>span:hover {
+	background-color: inherit;
+}
+
+.pagination>li:nth-child(2)>a,.pagination>li:nth-child(2)>span {
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+.navbar-back-btn,.navbar-right button {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.navbar-right button:last-child {
+	margin-right: 20px;
+}
+
+.b_logout {
+	margin-left: 20px;
+}
+
+.pagination {
+	margin-top: 10px;
+}
+
+.panel h3 {
+	font-weight: bold;
+}
+
+.col-md-7,.col-md-2,.col-md-6,.form-signin .col-lg-6 {
+	padding-left: 0;
+}
+
+.empty {
+	display: inline-block;
+	width: 20px;
+}
+
+.dialog {
+	position: absolute;
+
+	z-index: 10001;
+	display: none;
+	max-width: 276px;
+
+	padding: 1px;
+	text-align: left;
+	white-space: normal;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	background-clip: padding-box;
+}
+
+.dialog-title {
+	padding: 8px 14px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	border-radius: 5px 5px 0 0;
+}
+
+.dialog-box {
+	padding: 15px;
+}
+
+.dialog-button {
+	margin-bottom: 0px;
+	margin-top: 15px;
+	padding-left: 20px;
+}
+
+.dialog-button-left {
+	margin-bottom: 0px;
+	margin-top: 15px;
+	padding-left: 10px;
+	float: left;
+}
+
+.dialog-button-right {
+	margin-top: 15px;
+	padding-left: 20px;
+	float: right;
+}
+
+#b_select_area {
+	font-weight: bold;
+	color: #428bca;
+}
+
+.dialog-button-right>button:first-child,.dialog-button>button:first-child
+	{
+	margin-right: 15px;
+}
+
+.dialog-mask {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	opacity: 0.3;
+}
+
+.produceDate {
+	background: #fff url(/scripts/datepicker/skin/datePicker.gif) no-repeat
+		right;
+}
+
+.b_area_active {
+	background-color: #6B9EE2;
+}
+
+.b_area_active a {
+	color: #fff;
+}
+
+.b_area_item {
+	display: block;
+	padding: 5px;
+}
+
+.b_area_line {
+	margin: 10px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
+.tab-content>.tab-pane {
+	border: 1px solid #ddd;
+	border-top-color: transparent;
+	border-radius: 0 0 4px 4px;
+}
+
+.nav-tabs>li>a {
+	font-size: 18px;
+}
+
+.panel-500-auto {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.panel-600-auto {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.b_to_select_area {
+	background-image: url("/images/location.png");
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+.search_by_freezer_title {
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.b_google_map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 450px;
+	border: 1px solid #357ebd;
+	z-index: 10000;
+}
+
+.form-mb5 {
+	margin-bottom: 15px;
+	margin-top: 10px
+}
+
+.form-mb5 .form-group {
+	margin-bottom: 5px;
+}
+
+.panel-heading .panel-title {
+	display: inline-block;
+	position: relative;
+	left: 40%;
+	top: 0;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.b_import_success_message {
+	font-weight: bold;
+	color: green;
+	font-size: 18px
+}
+
+.b_import_error_message {
+	font-weight: bold;
+	color: red;
+	font-size: 18px
+}
+
+.nopage404 {
+	width: 500px;
+	margin: 50px auto 0;
+}
+
+.nopage404 h2 {
+	background-color: #2392c0;
+	font-size: 20px;
+	padding-left: 5px;
+	color: #f1fbfd;
+	height: 38px;
+	line-height: 38px;
+	overflow: hidden;
+	text-align: center;
+	font-family: "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", "\5b8b\4f53";
+}
+
+.nopage404 h1 {
+	background: url(/images/404.png) no-repeat;
+	height: 80px;
+	text-indent: -9999px;
+	margin-left: 150px;
+}
+
+.nopage404 h2.no_permission {
+	background-color: red;
+	margin-bottom: 50px;
+}

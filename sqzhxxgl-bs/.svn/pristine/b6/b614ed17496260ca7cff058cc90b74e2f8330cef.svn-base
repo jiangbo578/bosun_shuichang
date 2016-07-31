@@ -1,0 +1,1755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wsaf.wicresoft.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://wsaf.wicresoft.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">统一平台用户管理服务</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wsaf.wicresoft.com/">
+      <s:element name="GetUserInfoByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentDepartmentID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoListByDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoListByRoleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoListByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoListByGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUserByDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDepartmentInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentInfoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfoListByParentDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentDepartmentID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfoListByParentDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentInfoListByParentDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDepartmentByParentDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentDepartmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDepartmentByParentDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchDepartmentByParentDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGroupInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupInfoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupInfoListByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupInfoListByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupInfoListByDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGroupByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGroupByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchGroupByDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRoleInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoListByApplicationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoListByGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoListByUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleInfoListByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleInfoListByUserIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRoleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRoleByApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conditionXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRoleByApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRoleByApplicationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentUserByIDPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentUserByIDPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentUserByIDPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentUserByNamePath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentUserByNamePathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentUserByNamePathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentDepartmentPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ancestorDepartmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="offspringDepartmentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentDepartmentPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentDepartmentPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleUserByNamePath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleUserByNamePathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleUserByNamePathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleUserByIDPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleUserByIDPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleUserByIDPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByNameInDepartmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByIDInDepartmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDepartmentInDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="offspringDepartmentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ancestorDepartmentID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDepartmentInDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDepartmentInDepartmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByNameInGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByIDInGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGroupInDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGroupInDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGroupInDepartmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByNameInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByNameInRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserByIDInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserByIDInRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGroupInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGroupInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGroupInRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserInfoByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByRole" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoListByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoListByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUser" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUserByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUserByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoListByParentDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoListByParentDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoListByParentDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoListByParentDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDepartment" />
+  </wsdl:message>
+  <wsdl:message name="SearchDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDepartmentByParentDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDepartmentByParentDepartment" />
+  </wsdl:message>
+  <wsdl:message name="SearchDepartmentByParentDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDepartmentByParentDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoListByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoListByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupInfoListByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupInfoListByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchGroup" />
+  </wsdl:message>
+  <wsdl:message name="SearchGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchGroupByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchGroupByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="SearchGroupByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchGroupByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByApplication" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleInfoListByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleInfoListByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRole" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoleByApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRoleByApplication" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoleByApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRoleByApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentUserByIDPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentUserByIDPath" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentUserByIDPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentUserByIDPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentUserByNamePathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentUserByNamePath" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentUserByNamePathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentUserByNamePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentDepartmentPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentDepartmentPath" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentDepartmentPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentDepartmentPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleUserByNamePathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleUserByNamePath" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleUserByNamePathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleUserByNamePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleUserByIDPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleUserByIDPath" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleUserByIDPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleUserByIDPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsDepartmentInDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsDepartmentInDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IsDepartmentInDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsDepartmentInDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInGroup" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInGroup" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsGroupInDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGroupInDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IsGroupInDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGroupInDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInRole" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByNameInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByNameInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInRole" />
+  </wsdl:message>
+  <wsdl:message name="IsUserByIDInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserByIDInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsGroupInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGroupInRole" />
+  </wsdl:message>
+  <wsdl:message name="IsGroupInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGroupInRoleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrganizationServiceSoap">
+    <wsdl:operation name="GetUserInfoByName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据用户名获得用户信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoByNameSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据用户ID获得用户信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoByIDSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取全体用户信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoListSoapIn" />
+      <wsdl:output message="tns:GetUserInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门下的全体用户信息，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoListByDepartmentSoapIn" />
+      <wsdl:output message="tns:GetUserInfoListByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByRole">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门下的全体用户信息，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoListByRoleSoapIn" />
+      <wsdl:output message="tns:GetUserInfoListByRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取团队下的全体用户信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoListByGroupSoapIn" />
+      <wsdl:output message="tns:GetUserInfoListByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在系统中搜索用户信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchUserSoapIn" />
+      <wsdl:output message="tns:SearchUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserByDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在部门下搜索用户，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:SearchUserByDepartmentSoapIn" />
+      <wsdl:output message="tns:SearchUserByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentInfoSoapIn" />
+      <wsdl:output message="tns:GetDepartmentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取全体部门信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentInfoListSoapIn" />
+      <wsdl:output message="tns:GetDepartmentInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoListByParentDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门下的所有部门，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentInfoListByParentDepartmentSoapIn" />
+      <wsdl:output message="tns:GetDepartmentInfoListByParentDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在系统中搜索部门信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchDepartmentSoapIn" />
+      <wsdl:output message="tns:SearchDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartmentByParentDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在部门下搜索部门，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:SearchDepartmentByParentDepartmentSoapIn" />
+      <wsdl:output message="tns:SearchDepartmentByParentDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取团队信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupInfoSoapIn" />
+      <wsdl:output message="tns:GetGroupInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取全体团队信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupInfoListSoapIn" />
+      <wsdl:output message="tns:GetGroupInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoListByDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门下所有的团队信息，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupInfoListByDepartmentSoapIn" />
+      <wsdl:output message="tns:GetGroupInfoListByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在系统中搜索团队信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchGroupSoapIn" />
+      <wsdl:output message="tns:SearchGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroupByDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在部门下搜索团队信息，recursive表示是否包含下层部门</wsdl:documentation>
+      <wsdl:input message="tns:SearchGroupByDepartmentSoapIn" />
+      <wsdl:output message="tns:SearchGroupByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取全体角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoListSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某个应用的全部角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoListByApplicationSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoListByApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取团队绑定的全部角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoListByGroupSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoListByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户绑定的全部角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoListByUserNameSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoListByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户绑定的全部角色信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleInfoListByUserIDSoapIn" />
+      <wsdl:output message="tns:GetRoleInfoListByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRole">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在系统中搜索角色信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchRoleSoapIn" />
+      <wsdl:output message="tns:SearchRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoleByApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">在应用中搜索角色</wsdl:documentation>
+      <wsdl:input message="tns:SearchRoleByApplicationSoapIn" />
+      <wsdl:output message="tns:SearchRoleByApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByIDPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户在部门中的位置（从部门到用户的路径</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentUserByIDPathSoapIn" />
+      <wsdl:output message="tns:GetDepartmentUserByIDPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByNamePath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户在部门中的位置（从部门到用户的路径</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentUserByNamePathSoapIn" />
+      <wsdl:output message="tns:GetDepartmentUserByNamePathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentDepartmentPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取部门在部门中的位置（从部门到用户的路径）</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentDepartmentPathSoapIn" />
+      <wsdl:output message="tns:GetDepartmentDepartmentPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByNamePath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户获得角色的方式（从角色到用户的路径）</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleUserByNamePathSoapIn" />
+      <wsdl:output message="tns:GetRoleUserByNamePathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByIDPath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户获得角色的方式（从角色到用户的路径）</wsdl:documentation>
+      <wsdl:input message="tns:GetRoleUserByIDPathSoapIn" />
+      <wsdl:output message="tns:GetRoleUserByIDPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在部门中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByNameInDepartmentSoapIn" />
+      <wsdl:output message="tns:IsUserByNameInDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在部门中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByIDInDepartmentSoapIn" />
+      <wsdl:output message="tns:IsUserByIDInDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDepartmentInDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验部门是否在部门中</wsdl:documentation>
+      <wsdl:input message="tns:IsDepartmentInDepartmentSoapIn" />
+      <wsdl:output message="tns:IsDepartmentInDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在权限组中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByNameInGroupSoapIn" />
+      <wsdl:output message="tns:IsUserByNameInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在权限组中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByIDInGroupSoapIn" />
+      <wsdl:output message="tns:IsUserByIDInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验权限组是否在部门中</wsdl:documentation>
+      <wsdl:input message="tns:IsGroupInDepartmentSoapIn" />
+      <wsdl:output message="tns:IsGroupInDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInRole">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在角色中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByNameInRoleSoapIn" />
+      <wsdl:output message="tns:IsUserByNameInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInRole">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验用户是否在角色中</wsdl:documentation>
+      <wsdl:input message="tns:IsUserByIDInRoleSoapIn" />
+      <wsdl:output message="tns:IsUserByIDInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInRole">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验权限组是否在角色中</wsdl:documentation>
+      <wsdl:input message="tns:IsGroupInRoleSoapIn" />
+      <wsdl:output message="tns:IsGroupInRoleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrganizationServiceSoap" type="tns:OrganizationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserInfoByName">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByID">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoList">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByRole">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByGroup">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUser">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserByDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchUserByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoList">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoListByParentDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfoListByParentDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartmentByParentDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchDepartmentByParentDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfo">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoList">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoListByDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroup">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroupByDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchGroupByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfo">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoList">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByApplication">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByGroup">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserName">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserID">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRole">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoleByApplication">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/SearchRoleByApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByIDPath">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentUserByIDPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByNamePath">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentUserByNamePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentDepartmentPath">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentDepartmentPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByNamePath">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleUserByNamePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByIDPath">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/GetRoleUserByIDPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDepartmentInDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsDepartmentInDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInGroup">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInGroup">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInDepartment">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsGroupInDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInRole">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInRole">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInRole">
+      <soap:operation soapAction="http://wsaf.wicresoft.com/IsGroupInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrganizationServiceSoap12" type="tns:OrganizationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserInfoByName">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByID">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoList">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByRole">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoListByGroup">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetUserInfoListByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUser">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserByDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchUserByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoList">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfoListByParentDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentInfoListByParentDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDepartmentByParentDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchDepartmentByParentDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfo">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoList">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupInfoListByDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetGroupInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroup">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGroupByDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchGroupByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfo">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoList">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByApplication">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByGroup">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserName">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleInfoListByUserID">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleInfoListByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRole">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoleByApplication">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/SearchRoleByApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByIDPath">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentUserByIDPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentUserByNamePath">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentUserByNamePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentDepartmentPath">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetDepartmentDepartmentPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByNamePath">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleUserByNamePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleUserByIDPath">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/GetRoleUserByIDPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDepartmentInDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsDepartmentInDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInGroup">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInGroup">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInDepartment">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsGroupInDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByNameInRole">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByNameInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserByIDInRole">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsUserByIDInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGroupInRole">
+      <soap12:operation soapAction="http://wsaf.wicresoft.com/IsGroupInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrganizationService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">统一平台用户管理服务</wsdl:documentation>
+    <wsdl:port name="OrganizationServiceSoap" binding="tns:OrganizationServiceSoap">
+      <soap:address location="http://12.118.2.172/Framework.WebService/OrganizationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrganizationServiceSoap12" binding="tns:OrganizationServiceSoap12">
+      <soap12:address location="http://12.118.2.172/Framework.WebService/OrganizationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
